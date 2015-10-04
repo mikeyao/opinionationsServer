@@ -12,10 +12,9 @@ app.get('/', function (req, res) {
 
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.raw({ type: 'audio/wav', limit: '50mb' }));
-app.use(bodyParser.urlencoded({extended: false}));
 
 app.post('/record', function(req, res){
-  console.log("RECIEVED AUDIO TO EXTRACT INDICATORS: ", req);
+  console.log("RECIEVED AUDIO TO EXTRACT INDICATORS: ", req.body);
   res.send('success');
 });
 
